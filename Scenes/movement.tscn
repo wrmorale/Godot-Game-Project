@@ -1,3 +1,23 @@
-[gd_scene format=3 uid="uid://docuktqglfpxa"]
+[gd_scene load_steps=4 format=3 uid="uid://docuktqglfpxa"]
+
+[ext_resource type="Texture2D" uid="uid://bfnobvjogxlk" path="res://icon.svg" id="1_7r11r"]
+[ext_resource type="Script" path="res://Scenes/CharacterBody2D.cs" id="1_ijq65"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nejnw"]
 
 [node name="Node2D" type="Node2D"]
+position = Vector2(605, 312)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_ijq65")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("1_7r11r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+scale = Vector2(1.5, 1.5)
+shape = SubResource("CircleShape2D_nejnw")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+visible = false
+position = Vector2(-30, 11)
